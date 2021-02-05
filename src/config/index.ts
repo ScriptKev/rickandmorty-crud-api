@@ -2,11 +2,12 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export default {
-  PORT: process.env.PORT || 3600,
+  PORT: process.env.PORT || 3500,
   DB: {
-    HOST: process.env.DB_HOST || 'localhost',
-    USER: process.env.DB_USER || 'root',
-    DATABASE: process.env.DB_DATABASE || 'rickandmorty',
-    CONNECTION_LIMIT: process.env.CONNECTION_LIMIT || 10
+    HOST: process.env.DB_HOST,
+    USER: process.env.DB_USER,
+    DATABASE: process.env.DB_DATABASE,
+    PASSWORD: process.env.DB_PASSWORD,
+    PORT: Number(process.env.DB_PORT) || 3306
   }
 }

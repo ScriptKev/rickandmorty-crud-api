@@ -1,5 +1,6 @@
-const getEpisodes = () => {
-  console.log('getEpisodes')
-}
+import { Request, Response } from 'express'
 
-export default getEpisodes
+export const getEpisodes = (req: Request, res: Response) => {
+  res.status(200)
+    .send({ message: 'getEpisodes' })
+}
