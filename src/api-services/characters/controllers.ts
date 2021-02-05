@@ -7,7 +7,7 @@ export const getCharacters = async (req: Request, res: Response) => {
     err && console.log('getCharactersTable', err.message)
     console.log('SELECT * FROM characters Results', results)
 
-    res.status(200).send(results)
+    res.status(200).json(results)
   })
 }
 
@@ -19,7 +19,7 @@ export const getCharacter = async (req: Request, res: Response) => {
     (err: QueryError, results: any) => {
       err && console.log('getCharactersTable', err.message)
 
-      res.status(200).send(results[0])
+      res.status(200).json(results[0])
     })
 }
 
@@ -35,7 +35,7 @@ export const createCharacter = async (req: Request, res: Response) => {
     ('${image}','${name}', '${status}','${species}')`)
 
   res.status(200)
-    .send({ message: 'createCharacter' })
+    .json({ message: 'createCharacter' })
 }
 
 export const updateCharacter = async (req: Request, res: Response) => {
@@ -47,7 +47,7 @@ export const updateCharacter = async (req: Request, res: Response) => {
     (err: QueryError, results: any) => {
       err && console.log('deleteCharacter', err.message)
 
-      res.status(200).send({ message: 'Character Updated' })
+      res.status(200).json({ message: 'Character Updated' })
     })
 }
 
@@ -59,6 +59,6 @@ export const deleteCharacter = async (req: Request, res: Response) => {
     (err: QueryError, results: any) => {
       err && console.log('deleteCharacter', err.message)
 
-      res.status(200).send({ message: 'Character Deleted' })
+      res.status(200).json({ message: 'Character Deleted' })
     })
 }
